@@ -479,6 +479,57 @@ body {
 
 /*Section-team-end*/
 
+/*Section-portfolio*/
+.portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: left;
+    row-gap: 48px;
+}
+
+.portfolio-item:hover {
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+
+.overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--btn-color);
+    padding: 40px 32px;
+    color: var(--footer-text-color);
+
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+}
+
+.portfolio-item:hover .overlay-text {
+    transform: translatey(0%);
+}
+
+
+.portfolio-item-info {
+    padding: 32px 16px;
+    border-right: 1px solid #e7e9fc;
+    border-left: 1px solid #e7e9fc;
+    border-bottom: 1px solid #e7e9fc;
+}
+
+/*Section-portfolio-end*/
+
 @media only screen and (min-width: 768px) {
     .container {
         width: 768px;
@@ -486,7 +537,7 @@ body {
     }
 
     .section {
-        padding: 120px 0;
+        padding: 96px 0;
     }
 
     .header {
@@ -621,11 +672,32 @@ body {
     }
 
     /*Section-team-end*/
+
+    /*Section-portfolio*/
+    .portfolio-list {
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        row-gap: 48px;
+        column-gap: 24px;
+    }
+
+    .portfolio-item {
+        width: calc((100% - 24px) / 2);
+        transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    }
+
+    /*Section-portfolio-end*/
 }
 
 @media only screen and (min-width: 1158px) {
     .container {
         width: 1158px;
+    }
+
+    .section {
+        padding: 120px 0;
     }
 
     /*Header*/
@@ -699,4 +771,12 @@ body {
     }
 
     /*Section-team-end*/
+
+    /*Section-portfolio*/
+    .portfolio-item {
+        width: calc((100% - 48px) / 3);
+
+    }
+
+    /*Section-portfolio-end*/
 }
