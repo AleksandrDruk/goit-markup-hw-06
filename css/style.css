@@ -99,6 +99,7 @@ body {
 .container {
     padding-left: 15px;
     padding-right: 15px;
+    margin: 0 auto;
 }
 
 .modal-container {
@@ -423,10 +424,6 @@ body {
     box-shadow: var(--team-card-shadow);
 }
 
-.team-img {
-    width: 100%;
-}
-
 .team-item-info {
     padding: 32px 0;
 }
@@ -515,7 +512,6 @@ body {
 
 .footer-left-side {
     text-align: center;
-    /**/
     margin-bottom: 72px;
 }
 
@@ -632,11 +628,241 @@ body {
 }
 
 /*Footer-end*/
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+}
+
+.modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 288px;
+    min-height: 623px;
+    background-color: #fcfcfc;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, .12), 0px 1px 1px rgba(0, 0, 0, .14), 0px 2px 1px rgba(0, 0, 0, .2);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 4px;
+    padding: 72px 16px 24px;
+    z-index: 1000;
+}
+
+.box-close-svg {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 24px;
+    right: 24px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 24px;
+    height: 24px;
+    background-color: #e7e9fc;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: #2e2f42;
+    padding: 0;
+}
+
+.modal-close-svg {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.box-close-svg:hover,
+.box-close-svg:focus {
+    background-color: var(--hover-color);
+    border: none;
+}
+
+.box-close-svg:hover .modal-close-svg {
+    fill: #ffffff;
+}
+
+.box-close-svg:focus .modal-close-svg {
+    fill: #ffffff;
+}
+
+.modal-content-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: var(--title-color);
+    margin-bottom: 16px;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-form-box {
+    margin-bottom: 8px;
+}
+
+.modal-label {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: var(--modal-color);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.modal-input {
+    padding-left: 38px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    max-height: 40px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    outline: transparent;
+    background-color: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--sub-text-color);
+}
+
+.modal-form input:focus,
+.textarea-form:focus {
+    border: 1px solid var(--btn-color);
+}
+
+.modal-textarea-box {
+    margin-bottom: 16px;
+}
+
+.textarea-form {
+    outline: none;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    width: 100%;
+    height: 120px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
+    padding: 8px 16px;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-svg-box {
+    position: relative;
+}
+
+.textarea-form::placeholder {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+}
+
+.modal-form .svg-modal {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-svg-box input:focus~.svg-modal {
+    fill: #4D5AE5;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.policy-text {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: var(--modal-color);
+}
+
+.checkbox-style {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    border-radius: 2px;
+    fill: transparent;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.policy-checkbox:checked+.policy-text .checkbox-style {
+    background-color: var(--hover-color);
+    border: none;
+    fill: var(--bg-team);
+}
+
+.checkbox-style-svg {
+    fill: transparent;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.policy-checkbox:checked+.policy-text .checkbox-style-svg {
+    fill: var(--bg-team);
+}
+
+.policy-link {
+    line-height: 133%;
+    text-decoration: underline;
+    color: var(--btn-color);
+}
+
+.form-btn-send {
+    color: #fff;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    border-radius: 4px;
+    padding: 16px 32px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    background-color: var(--btn-color);
+    border: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    min-width: 169px;
+    height: 56px;
+    margin: 0 auto;
+}
+
+.form-btn-send:hover,
+.form-btn-send:focus {
+    background-color: var(--hover-color);
+}
 
 @media only screen and (min-width: 768px) {
     .container {
-        width: 767px;
-        margin: 0 auto;
+        width: 768px;
     }
 
     .section {
@@ -847,6 +1073,15 @@ body {
     }
 
     /*Footer-end*/
+
+    /*Modal*/
+    .modal {
+        width: 408px;
+        min-height: 584px;
+        padding: 72px 24px 24px;
+    }
+
+    /*Modal-end*/
 }
 
 @media only screen and (min-width: 1158px) {
@@ -958,4 +1193,7 @@ body {
 
     /*Footer-end*/
 
+
+    /*Modal*/
+    /*Modal-end*/
 }
