@@ -1039,10 +1039,13 @@ body {
     /*Section-portfolio-end*/
 
     /*Footer*/
+    .footer {
+        padding-inline: 92px;
+    }
+
     .footer .container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
         align-items: baseline;
         column-gap: 24px;
         row-gap: 72px;
@@ -1056,13 +1059,17 @@ body {
 
     .footer-social {
         margin-bottom: 0;
-        margin-right: auto;
     }
 
     .footer-form {
         display: flex;
         align-items: center;
         gap: 24px;
+    }
+
+    .footer-form-box {
+        max-width: 453px;
+        width: 100%;
     }
 
     .footer-form-title {
@@ -1173,6 +1180,7 @@ body {
     /*Footer*/
     .footer {
         padding-block: 100px;
+        padding-inline: 0;
     }
 
     .footer .container {
