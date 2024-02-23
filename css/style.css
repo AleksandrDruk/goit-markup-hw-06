@@ -150,7 +150,6 @@ body {
 /*Header*/
 
 .header {
-    padding-block: 16px;
     border-bottom: 1px solid #e7e9fc;
     box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
@@ -162,7 +161,8 @@ body {
 }
 
 .header-logo {
-    margin-right: 120px;
+    padding-block: 16px;
+    display: block;
 }
 
 .header-logo-span {
@@ -422,6 +422,10 @@ body {
     background-color: #fff;
     border-radius: 0 0 4px 4px;
     box-shadow: var(--team-card-shadow);
+}
+
+.team-item img {
+    margin: 0 auto;
 }
 
 .team-item-info {
@@ -869,8 +873,10 @@ body {
         padding: 96px 0;
     }
 
-    .header {
+    .header-logo {
         padding-block: 0;
+        margin-right: 120px;
+        display: inline-block;
     }
 
     .header-logo {
